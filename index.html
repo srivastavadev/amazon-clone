@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            <i class="fa-brands fa-amazon"></i>
+            <span>Amazon</span>
+        </div>
+
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <small>Deliver to</small>
+                <strong>India</strong>
+            </div>
+        </div>
+
+        <div class="search">
+            <select>
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home</option>
+            </select>
+
+            <input type="text" id="searchInput"
+                placeholder="Search">
+
+            <button onclick="searchProducts()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="language">
+            🇮🇳 EN
+        </div>
+
+        <div class="account">
+            <small>Hello, sign in</small>
+            <strong>Account & Lists</strong>
+        </div>
+
+        <div class="orders">
+            <small>Returns</small>
+            <strong>& Orders</strong>
+        </div>
+
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+            <strong>Cart</strong>
+        </div>
+
+    </div>
+
+    <nav class="subnav">
+        <span><i class="fa-solid fa-bars"></i> All</span>
+        <span>Today's Deals</span>
+        <span>Customer Service</span>
+        <span>Registry</span>
+        <span>Gift Cards</span>
+        <span>Sell</span>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <div class="hero-content">
+        <p>Welcome to ShopZone</p>
+        <h1>Everything you need.<br>Delivered to your door.</h1>
+        <button>Shop Now</button>
+    </div>
+</section>
+
+
+<section class="categories">
+
+    <div class="category">
+        <h2>Electronics</h2>
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800">
+        <a href="#">Shop electronics →</a>
+    </div>
+
+    <div class="category">
+        <h2>Fashion</h2>
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800">
+        <a href="#">Explore fashion →</a>
+    </div>
+
+    <div class="category">
+        <h2>Home & Kitchen</h2>
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800">
+        <a href="#">Shop home →</a>
+    </div>
+
+    <div class="category">
+        <h2>Beauty</h2>
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800">
+        <a href="#">Discover beauty →</a>
+    </div>
+
+</section>
+
+
+<section class="products-section">
+
+    <div class="section-heading">
+        <h2>Today's Best Deals</h2>
+        <a href="#">See all deals</a>
+    </div>
+
+    <div class="products" id="productContainer">
+
+        <div class="product" data-name="Wireless Headphones">
+            <div class="discount">-35%</div>
+
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600">
+
+            <h3>Wireless Headphones</h3>
+
+            <div class="rating">
+                ★★★★☆ <span>4.4</span>
+            </div>
+
+            <p class="price">₹1,299</p>
+            <p class="old-price">₹1,999</p>
+
+            <button onclick="addToCart()">
+                Add to Cart
+            </button>
+        </div>
+
+
+        <div class="product" data-name="Smart Watch">
+
+            <div class="discount">-28%</div>
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600">
+
+            <h3>Smart Watch</h3>
+
+            <div class="rating">
+                ★★★★★ <span>4.7</span>
+            </div>
+
+            <p class="price">₹2,499</p>
+            <p class="old-price">₹3,499</p>
+
+            <button onclick="addToCart()">
+                Add to Cart
+            </button>
+        </div>
+
+
+        <div class="product" data-name="Running Shoes">
+
+            <div class="discount">-40%</div>
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600">
+
+            <h3>Premium Running Shoes</h3>
+
+            <div class="rating">
+                ★★★★☆ <span>4.5</span>
+            </div>
+
+            <p class="price">₹1,799</p>
+            <p class="old-price">₹2,999</p>
+
+            <button onclick="addToCart()">
+                Add to Cart
+            </button>
+        </div>
+
+
+        <div class="product" data-name="Laptop">
+
+            <div class="discount">-15%</div>
+
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600">
+
+            <h3>Powerful Laptop</h3>
+
+            <div class="rating">
+                ★★★★★ <span>4.8</span>
+            </div>
+
+            <p class="price">₹54,999</p>
+            <p class="old-price">₹64,999</p>
+
+            <button onclick="addToCart()">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="features">
+
+    <div>
+        <i class="fa-solid fa-truck"></i>
+        <h3>Fast Delivery</h3>
+        <p>Quick delivery across India</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Secure Payment</h3>
+        <p>100% secure transactions</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-rotate-left"></i>
+        <h3>Easy Returns</h3>
+        <p>Simple return policy</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>We're here to help</p>
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="back-top" onclick="scrollTopPage()">
+        Back to top
+    </div>
+
+    <div class="footer-main">
+
+        <div>
+            <h3>Get to Know Us</h3>
+            <p>About ShopZone</p>
+            <p>Careers</p>
+            <p>Press Releases</p>
+            <p>Investor Relations</p>
+        </div>
+
+        <div>
+            <h3>Make Money with Us</h3>
+            <p>Sell on ShopZone</p>
+            <p>Affiliate Program</p>
+            <p>Advertise Your Products</p>
+        </div>
+
+        <div>
+            <h3>Customer Service</h3>
+            <p>Your Account</p>
+            <p>Returns Centre</p>
+            <p>Help Centre</p>
+        </div>
+
+        <div>
+            <h3>Connect With Us</h3>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <h2>Amazon</h2>
+        <p>© 2026 Amazon. This is a demo e-commerce project.</p>
+    </div>
+
+</footer>
+
+
+<!-- <script src="index.js"></script> -->
+
+</body>
+</html>
